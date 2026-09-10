@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+  --primary-color: #DA291C;
+  --secondary-color: #EDEFF4;
+}
+
+body {
+  background-color: #fff;
+  font-family: var(--font-roboto), sans-serif;
+}
+
+/* Primary Color */
+.primary-color {
+  color: var(--primary-color);
+}
+
+/* Secondary Color */
+.secondary-color {
+  color: var(--secondary-color);
+}
+
+/* Heading */
+.heading-size {
+  color: #000;
+  font-family: var(--font-roboto), sans-serif;
+  font-size: 58px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+/* Navigation Items */
+.nav-items {
+  color: #000;
+  font-family: var(--font-roboto), sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+
+
+
+
+
+.hero-pagination {
+  position: absolute;
+  bottom: 19px !important;
+  left: 50% !important;
+  width: auto !important;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  z-index: 30;
+}
+
+.hero-pagination .swiper-pagination-bullet {
+  width: 30px !important;
+  height: 4px !important;
+  margin: 0 !important;
+
+  padding: 0 !important;
+
+  border-radius: 2px !important;
+
+  background: #ffffff !important;
+  opacity: 1 !important;
+
+  cursor: pointer;
+}
+
+.hero-pagination .swiper-pagination-bullet-active {
+  background: #da291c !important;
+  opacity: 1 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .perfect-ride-subtitle{
+  color: #000;
+text-align: center;
+font-family: Roboto;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+ }
