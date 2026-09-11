@@ -299,7 +299,7 @@ export default function Hero() {
             items-center
             justify-center
             rounded-full
-            bg-black/50
+            bg-black/40
             text-white
             transition
             hover:bg-black/35
@@ -355,7 +355,7 @@ export default function Hero() {
             items-center
             justify-center
             rounded-full
-            bg-black/50
+            bg-black/40
             text-white
             transition
             hover:bg-black/35
@@ -396,7 +396,7 @@ export default function Hero() {
           </svg>
         </button>
 
-        {/* ================= PAGINATION ================= */}
+        {/*  PAGINATION  */}
         <div
           className="
             hero-pagination
@@ -406,7 +406,7 @@ export default function Hero() {
             z-30
             flex
             w-auto
-            -translate-x-1/2
+        
             items-center
             justify-center
             gap-[12px]
