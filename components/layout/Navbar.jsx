@@ -1,8 +1,9 @@
 "use client";
 
+
+import Link from "next/link";
+import { useState } from "react";
 import Image from "next/image";
-
-
 const navItems = [
   "Intercom Headsets",
   "Helmet Bluetooth",
@@ -12,7 +13,11 @@ const navItems = [
   "Bestsellers",
 ];
 
+
+
 export default function Navbar() {
+
+   const [activeItem, setActiveItem] = useState("Intercom Headsets");
   return (
     <header className="w-full bg-white">
       {/* Offer Bar */}
@@ -28,7 +33,12 @@ export default function Navbar() {
              <div className="justify-center items-center flex h-full w-full max-w-[1555px] px-[20px] mx-auto gap-[30px]">
           
           {/* Logo */}
-          <div className="flex h-full w-[355px]  gap-2 shrink-0 items-center">
+
+
+
+          <Link href = "/">
+          
+            <div className="flex h-full w-[355px]  gap-2 shrink-0 items-center">
             <Image
               src="/navbar/logo.png"
               alt="EDYELL"
@@ -47,28 +57,37 @@ export default function Navbar() {
   <path d="M198.569 0H207.275V25.3017H229.205V32.6375H198.569V0Z" fill="black"/>
 </svg>
           </div>
+          
+          </Link>
+        
 
-          {/* Navigation Links */}
-          <div className="flex h-full flex-1 items-center justify-between">
-            {navItems.map((item) => (
-       <a
-  key={item}
-  href="#"
-  className="
-    whitespace-nowrap
-    text-[16px]
-    font-medium
-    font-roboto
-    text-black
-  "
->
- 
-
-
-                {item}
-              </a>
-            ))}
-          </div>
+        
+     {/* Navigation Links */}
+<div className="flex h-full flex-1 items-center justify-between">
+  {navItems.map((item) => (
+    <a
+      key={item}
+      href="#"
+      onClick={() => setActiveItem(item)}
+      className={`
+        relative
+        flex
+        h-full
+        items-center
+        whitespace-nowrap
+        text-[16px]
+        font-medium
+        font-roboto
+        text-black
+        transition
+        duration-200
+        ${activeItem === item ? "after:absolute after:bottom-3 after:left-0 after:h-[3px] after:w-full after:bg-[#DA291C]" : ""}
+      `}
+    >
+      {item}
+    </a>
+  ))}
+</div>
 
           {/* Right Side Actions */}
           <div className="flex h-full w-[260px] shrink-0 items-center justify-end gap-[40px]">

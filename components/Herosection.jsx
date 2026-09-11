@@ -48,15 +48,8 @@ const slides = [
   },
   {
     image: "/hero/hero4.webp",
-    title: "Premium Experience",
-    subtitle: "Designed for Adventure",
-    description: (
-      <>
-        Exceptional quality and powerful features
-        <br className="hidden sm:block" />
-        wherever you go.
-      </>
-    ),
+    
+    
   },
 ];
 
@@ -145,7 +138,7 @@ export default function Hero() {
                 "
               />
 
-              {/* ================= CONTENT ================= */}
+              {/*  CONTENT  */}
               <div
                 className="
                   absolute
@@ -232,59 +225,62 @@ export default function Hero() {
                 </p>
 
                 {/* BUY BUTTON */}
-                <button
-                  className="
-                    mt-10
-                    flex
-                    h-[44px]
-                    min-w-[171px]
-                    cursor-pointer
-                    items-center
-                    justify-center
-                    gap-3
-                    bg-[#DA291C]
-                    font-roboto
-                    text-[24px]
-                    font-normal
-                    text-white
-                    transition
-                    hover:bg-[#b92117]
+          {/* BUY BUTTON - HIDE ON LAST SLIDE */}
+{index !== slides.length - 1 && (
+  <button
+    className="
+      mt-10
+      flex
+      h-[44px]
+      min-w-[171px]
+      cursor-pointer
+      items-center
+      justify-center
+      gap-3
+      bg-[#DA291C]
+      font-roboto
+      text-[24px]
+      font-normal
+      text-white
+      transition
+      hover:bg-[#b92117]
 
-                    /* TABLET */
-                    max-lg:mt-8
-                    max-lg:text-[21px]
+      max-lg:mt-8
+      max-lg:text-[21px]
 
-                    /* MOBILE */
-                    max-sm:mt-7
-                    max-sm:h-[42px]
-                    max-sm:min-w-[145px]
-                    max-sm:text-[19px]
-                  "
-                >
-                  Buy Now
+      max-sm:mt-7
+      max-sm:h-[42px]
+      max-sm:min-w-[145px]
+      max-sm:text-[19px]
+    "
+  >
+    Buy Now
 
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="9"
-                    height="14"
-                    viewBox="0 0 9 14"
-                    fill="none"
-                  >
-                    <path
-                      d="M1 13L7 7L1 1"
-                      stroke="white"
-                      strokeWidth="2"
-                      strokeMiterlimit="10"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </button>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="9"
+      height="14"
+      viewBox="0 0 9 14"
+      fill="none"
+    >
+      <path
+        d="M1 13L7 7L1 1"
+        stroke="white"
+        strokeWidth="2"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+      />
+    </svg>
+  </button>
+)}
+
+
               </div>
             </div>
           </SwiperSlide>
         ))}
 
-        {/* ================= LEFT ARROW ================= */}
+        {/*  LEFT ARROW  */}
         <button
           className="
             hero-prev
@@ -340,7 +336,7 @@ export default function Hero() {
           </svg>
         </button>
 
-        {/* ================= RIGHT ARROW ================= */}
+        {/*  RIGHT ARROW  */}
         <button
           className="
             hero-next

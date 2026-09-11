@@ -15,7 +15,9 @@ const videos = [
 export default function AuthenticReviews() {
   const [activeIndex, setActiveIndex] = useState(2);
   const [playingIndex, setPlayingIndex] = useState(null);
-  const [muted, setMuted] = useState(true);
+const [muted, setMuted] = useState(
+  videos.map(() => true)
+);
 
   const videoRefs = useRef([]);
 
@@ -67,48 +69,54 @@ export default function AuthenticReviews() {
   /*
    * Play / Pause video
    */
-  const togglePlay = (index) => {
-    const video = videoRefs.current[index];
+ const togglePlay = (index) => {
+  const video = videoRefs.current[index];
 
-    if (!video) return;
+  if (!video) return;
 
-    if (video.paused) {
-      // Pause all other videos
-      videoRefs.current.forEach((otherVideo, otherIndex) => {
-        if (otherVideo && otherIndex !== index) {
-          otherVideo.pause();
-        }
-      });
+  if (video.paused) {
+    // Pause all other videos
+    videoRefs.current.forEach((otherVideo, otherIndex) => {
+      if (otherVideo && otherIndex !== index) {
+        otherVideo.pause();
+      }
+    });
 
-      video.muted = muted;
+    // Apply this video's own mute state
+    video.muted = muted[index];
 
-      video
-        .play()
-        .then(() => {
-          setPlayingIndex(index);
-        })
-        .catch(() => {});
-    } else {
-      video.pause();
-      setPlayingIndex(null);
-    }
-  };
+    video
+      .play()
+      .then(() => {
+        setPlayingIndex(index);
+      })
+      .catch(() => {});
+  } else {
+    video.pause();
+    setPlayingIndex(null);
+  }
+};
 
   /*
    * Mute / Unmute
    */
-  const toggleMute = (e, index) => {
-    e.stopPropagation();
+const toggleMute = (e, index) => {
+  e.stopPropagation();
 
-    const video = videoRefs.current[index];
+  const video = videoRefs.current[index];
 
-    if (!video) return;
+  if (!video) return;
 
-    const newMuted = !video.muted;
+  const newMuted = !video.muted;
 
-    video.muted = newMuted;
-    setMuted(newMuted);
-  };
+  video.muted = newMuted;
+
+  setMuted((prev) => {
+    const updated = [...prev];
+    updated[index] = newMuted;
+    return updated;
+  });
+};
 
   return (
     <section className="w-full overflow-hidden bg-white py-19">
@@ -163,7 +171,7 @@ export default function AuthenticReviews() {
                       videoRefs.current[index] = el;
                     }}
                     src={video}
-                    muted={muted}
+                  muted={muted[index]}
                     playsInline
                     preload="metadata"
                     className="h-full w-full object-cover"
@@ -234,9 +242,9 @@ export default function AuthenticReviews() {
                       transition
                       hover:scale-110
                     "
-                    aria-label={muted ? "Unmute video" : "Mute video"}
+                  aria-label={muted[index] ? "Unmute video" : "Mute video"}
                   >
-                    {muted ? "🔇" : "🔊"}
+                {muted[index] ? "🔇" : "🔊"}
                   </button>
 
                 </div>

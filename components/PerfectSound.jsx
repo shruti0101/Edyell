@@ -10,7 +10,7 @@ const soundImages = [
   },
   {
     type: "image",
-    image: "/toggle/2.png",
+    image: "/toggle/2-2.png",
   },
   {
     type: "image",
@@ -23,100 +23,115 @@ const soundImages = [
 ];
 
 export default function PerfectSound() {
-  // Last item/video is active initially
+  // Video is active initially
   const [activeIndex, setActiveIndex] = useState(3);
+
+  // RIGHT ARROW
+  const handleNext = () => {
+    setActiveIndex((prev) => {
+      return (prev + 1) % soundImages.length;
+    });
+  };
+
+  // LEFT ARROW
+  const handlePrevious = () => {
+    setActiveIndex((prev) => {
+      return (
+        (prev - 1 + soundImages.length) %
+        soundImages.length
+      );
+    });
+  };
 
   return (
     <section className="w-full bg-white py-[70px]">
       <div className="mx-auto w-full max-w-[1432px]">
 
-        {/*  HEADER  */}
-
+        {/* HEADER */}
         <div className="relative my-15 flex items-center justify-center">
-          <h2
-            className="
-              m-0
-             heading-size
-            "
-          >
+          <h2 className="m-0 heading-size">
             Perfect Sound,Anytime,Anywhere
           </h2>
 
-          {/*  ARROWS  */}
+          {/* ARROWS */}
+          <div className="absolute right-0 flex items-center gap-[6px]">
 
-          <div
-            className="
-              absolute
-              right-0
-              flex
-              items-center
-              gap-[6px]
-            "
-          >
             {/* PREVIOUS */}
-
-            <button
-              type="button"
-              className="
-                flex
-                h-[30px]
-                w-[30px]
-                items-center
-                justify-center
-                bg-[#F2F2F2]
-                p-0
-              "
-            >
-              <svg
-                width="6"
-                height="12"
-                viewBox="0 0 5 8"
-                fill="none"
-              >
-                <path
-                  d="M4 1L1 4L4 7"
-                  stroke="black"
-                  strokeWidth="1"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
+         <button
+  type="button"
+  onClick={handlePrevious}
+  aria-label="Previous"
+  className="
+    group
+    flex
+    h-[30px]
+    w-[30px]
+    items-center
+    justify-center
+    bg-[#F2F2F2]
+    p-0
+    transition
+    duration-200
+    hover:bg-[#DA291C]
+  "
+>
+  <svg
+    width="6"
+    height="12"
+    viewBox="0 0 5 8"
+    fill="none"
+  >
+    <path
+      d="M4 1L1 4L4 7"
+      stroke="black"
+      className="transition duration-200 group-hover:stroke-white"
+      strokeWidth="1"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+</button>
 
             {/* NEXT */}
+          <button
+  type="button"
+  onClick={handleNext}
+  aria-label="Next"
+  className="
+    group
+    flex
+    h-[30px]
+    w-[30px]
+    items-center
+    justify-center
+    bg-[#DA291C]
+    p-0
+    transition
+    duration-200
+    hover:bg-[#b92117]
+  "
+>
+  <svg
+    width="6"
+    height="12"
+    viewBox="0 0 5 8"
+    fill="none"
+  >
+    <path
+      d="M1 1L4 4L1 7"
+      stroke="white"
+      className="transition duration-200"
+      strokeWidth="1"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+</button>
 
-            <button
-              type="button"
-              className="
-                flex
-                h-[30px]
-                w-[30px]
-                items-center
-                justify-center
-                bg-[#DA291C]
-                p-0
-              "
-            >
-              <svg
-                width="6"
-                height="12"
-                viewBox="0 0 5 8"
-                fill="none"
-              >
-                <path
-                  d="M1 1L4 4L1 7"
-                  stroke="white"
-                  strokeWidth="1"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
           </div>
         </div>
 
-        {/* ================= ACCORDION ================= */}
-
+        {/* ACCORDION */}
         <div
           className="
             flex
@@ -139,6 +154,7 @@ export default function PerfectSound() {
                   h-full
                   min-w-0
                   overflow-hidden
+                  cursor-pointer
                   transition-[flex]
                   duration-500
                   ease-in-out
@@ -149,22 +165,17 @@ export default function PerfectSound() {
                   }
                 `}
               >
-                {/* ================= IMAGE ================= */}
-
+                {/* IMAGE */}
                 {item.type === "image" && (
                   <Image
                     src={item.image}
                     alt={`Sound product ${index + 1}`}
                     fill
-                   
-                    className="
-                      object-cover
-                    "
+                    className="object-cover"
                   />
                 )}
 
-                {/* ================= VIDEO ================= */}
-
+                {/* VIDEO */}
                 {item.type === "video" && (
                   <video
                     src={item.image}

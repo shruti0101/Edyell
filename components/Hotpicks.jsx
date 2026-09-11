@@ -4,6 +4,18 @@ import Image from "next/image";
 import React from "react";
 
 const hotPicks = [
+
+
+ {
+    title: "Warning light",
+    subtitle: "Smart Brake Flash",
+    image: "/hotpicks3.png",
+  },
+
+
+
+
+
   {
     title: "Music, Calls",
     subtitle: "Communication System",
@@ -14,11 +26,7 @@ const hotPicks = [
     subtitle: "Communication System",
     image: "/hotpicks2.png",
   },
-  {
-    title: "Warning light",
-    subtitle: "Smart Brake Flash",
-    image: "/hotpicks3.png",
-  },
+ 
 ];
 
 export default function HotPicks() {

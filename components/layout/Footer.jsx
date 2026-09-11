@@ -38,35 +38,65 @@ export default function Footer() {
               <a href="#">Faq</a>
             </div>
 
-            {/* Social Icons */}
-            <div className="mt-[16px] flex items-center gap-[15px]">
-              <a href="#" aria-label="Facebook">
-                <Image
-                  src="/fb.png"
-                  alt="Facebook"
-                  width={26}
-                  height={26}
-                />
-              </a>
+       {/* Social Icons */}
+<div className="mt-[16px] flex items-center gap-[15px]">
+  <a href="#" aria-label="Facebook">
+    <Image
+      src="/fb.png"
+      alt="Facebook"
+      width={26}
+      height={26}
+    />
+  </a>
 
-              <a href="#" aria-label="Instagram">
-                <Image
-                  src="/insta.png"
-                  alt="Instagram"
-                  width={26}
-                  height={26}
-                />
-              </a>
+  <a href="#" aria-label="Instagram">
+    <Image
+      src="/insta.png"
+      alt="Instagram"
+      width={26}
+      height={26}
+    />
+  </a>
 
-              <a href="#" aria-label="YouTube">
-             <Image
-                  src="/yt.png"
-                  alt="Instagram"
-                  width={35}
-                  height={35}
-                />
-              </a>
-            </div>
+  <a href="#" aria-label="YouTube">
+    <Image
+      src="/yt.png"
+      alt="YouTube"
+      width={32}
+      height={32}
+    />
+  </a>
+
+  <a href="#" aria-label="LinkedIn">
+    <Image
+      src="/linkedin.webp"
+      alt="LinkedIn"
+      width={26}
+      height={26}
+      className="object-contain"
+    />
+  </a>
+
+  <a href="#" aria-label="Threads">
+    <Image
+      src="/thread.png"
+      alt="Threads"
+      width={30}
+      height={30}
+      className="object-contain"
+    />
+  </a>
+
+  <a href="#" aria-label="Pinterest">
+    <Image
+      src="/pinterest.png"
+      alt="Pinterest"
+      width={26}
+      height={26}
+      className="object-contain"
+    />
+  </a>
+</div>
           </div>
 
           {/* Why Buy From Us */}
