@@ -157,6 +157,7 @@ export default function Footer() {
               <Image
                 src="/payment.png"
                 alt="Payment Methods"
+            
                 width={400}
                 height={106}
                 className="h-auto w-full"

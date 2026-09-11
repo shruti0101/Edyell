@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -16,7 +17,7 @@ const slides = [
     description: (
       <>
         Enhanced soundstage and deeper bass for immersive
-        <br />
+        <br className="hidden sm:block" />
         audio, even on the move.
       </>
     ),
@@ -28,7 +29,7 @@ const slides = [
     description: (
       <>
         Premium performance and advanced technology for immersive
-        <br />
+        <br className="hidden sm:block" />
         audio, even on the move.
       </>
     ),
@@ -40,12 +41,11 @@ const slides = [
     description: (
       <>
         Exceptional quality and powerful features
-        <br />
+        <br className="hidden sm:block" />
         wherever you go.
       </>
     ),
   },
-
   {
     image: "/hero/hero4.webp",
     title: "Premium Experience",
@@ -53,38 +53,10 @@ const slides = [
     description: (
       <>
         Exceptional quality and powerful features
-        <br />
+        <br className="hidden sm:block" />
         wherever you go.
       </>
     ),
-  },
-];
-
-const features = [
-  {
-    icon: "🛡️",
-    title: "12 Months",
-    subtitle: "Warranty",
-  },
-  {
-    icon: "🚚",
-    title: "Free Express",
-    subtitle: "Delivery",
-  },
-  {
-    icon: "♻️",
-    title: "7-day",
-    subtitle: "Replacement",
-  },
-  {
-    icon: "🏆",
-    title: "ToP",
-    subtitle: "Top Brand",
-  },
-  {
-    icon: "💰",
-    title: "Cash/Pay on",
-    subtitle: "Delivery",
   },
 ];
 
@@ -116,9 +88,7 @@ const ArrowRight = () => (
 
 export default function Hero() {
   return (
-    <section className="w-full overflow-hidden bg-white relative">
-      {/*  HERO SLIDER  */}
-
+    <section className="relative w-full overflow-hidden bg-white">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation={{
@@ -134,108 +104,165 @@ export default function Hero() {
           disableOnInteraction: false,
         }}
         loop={true}
-        className="relative h-[800px] min-w-[1920px]"
+        className="
+          relative
+          h-[650px]
+          w-full
+          sm:h-[700px]
+          lg:h-[800px]
+        "
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div
-              className="relative h-full  w-full  bg-cover bg-center bg-no-repeat "
+              className="
+                relative
+                h-full
+                w-full
+                bg-cover
+                bg-center
+                bg-no-repeat
+
+                max-sm:bg-[center_center]
+              "
               style={{
                 backgroundImage: `url(${slide.image})`,
               }}
             >
               {/* DARK OVERLAY */}
-
               <div
                 className="
-                  absolute inset-0
+                  absolute
+                  inset-0
                   bg-gradient-to-r
                   from-black/35
                   via-black/25
                   to-transparent
+
+                  max-sm:from-black/45
+                  max-sm:via-black/25
+                  max-sm:to-transparent
                 "
               />
 
               {/* ================= CONTENT ================= */}
-
               <div
                 className="
                   absolute
-                  left-[17.4%]
-                  top-[31.5%]
                   z-10
                   text-[#FFFFFF]
+
+                  /* DESKTOP - ORIGINAL FIGMA POSITION */
+                  left-[17.4%]
+                  top-[31.5%]
+
+                  /* TABLET */
+                  max-lg:left-[10%]
+                  max-lg:top-[30%]
+
+                  /* MOBILE */
+                  max-sm:left-[6%]
+                  max-sm:right-[6%]
+                  max-sm:top-1/2
+                  max-sm:-translate-y-1/2
                 "
               >
                 {/* TITLE */}
-
                 <h1
                   className="
-    m-0
-    font-roboto
-    text-[68px]
-    font-bold
-    leading-normal
-    text-white
-       
-  "
+                    m-0
+                    font-roboto
+                    text-[68px]
+                    font-bold
+                    leading-normal
+                    text-white
+
+                    /* TABLET */
+                    max-lg:text-[52px]
+
+                    /* MOBILE */
+                    max-sm:text-[38px]
+                    max-[400px]:text-[34px]
+                  "
                 >
                   {slide.title}
                 </h1>
 
                 {/* SUBTITLE */}
-
                 <h2
                   className="
-                     font-roboto
-                    
-    text-[32px]
-     font-bold
-    leading-normal
-    text-white
-     leading-normal
+                    font-roboto
+                    text-[32px]
+                    font-bold
+                    leading-normal
+                    text-white
+
+                    /* TABLET */
+                    max-lg:text-[27px]
+
+                    /* MOBILE */
+                    max-sm:text-[22px]
+                    max-[400px]:text-[20px]
                   "
                 >
                   {slide.subtitle}
                 </h2>
 
                 {/* DESCRIPTION */}
-
                 <p
                   className="
                     my-4
-                                       font-roboto
-                     
-    text-[24px]
-     font-normal
-    leading-normal
-    text-white
-   
+                    font-roboto
+                    text-[24px]
+                    font-normal
+                    leading-normal
+                    text-white
+
+                    /* TABLET */
+                    max-lg:text-[20px]
+
+                    /* MOBILE */
+                    max-sm:max-w-[420px]
+                    max-sm:text-[17px]
+                    max-sm:leading-[1.5]
+                    max-[400px]:text-[16px]
                   "
                 >
                   {slide.description}
                 </p>
 
                 {/* BUY BUTTON */}
-
                 <button
                   className="
+                    mt-10
                     flex
                     h-[44px]
                     min-w-[171px]
+                    cursor-pointer
                     items-center
                     justify-center
                     gap-3
                     bg-[#DA291C]
-                    cursor-pointer
                     font-roboto
                     text-[24px]
                     font-normal
-                    text-[#fffff]
-                  mt-10
+                    text-white
+                    transition
+                    hover:bg-[#b92117]
+
+                    /* TABLET */
+                    max-lg:mt-8
+                    max-lg:text-[21px]
+
+                    /* MOBILE */
+                    max-sm:mt-7
+                    max-sm:h-[42px]
+                    max-sm:min-w-[145px]
+                    max-sm:text-[19px]
                   "
                 >
                   Buy Now
+
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="9"
@@ -246,9 +273,9 @@ export default function Hero() {
                     <path
                       d="M1 13L7 7L1 1"
                       stroke="white"
-                      stroke-width="2"
-                      stroke-miterlimit="10"
-                      stroke-linecap="round"
+                      strokeWidth="2"
+                      strokeMiterlimit="10"
+                      strokeLinecap="round"
                     />
                   </svg>
                 </button>
@@ -257,6 +284,7 @@ export default function Hero() {
           </SwiperSlide>
         ))}
 
+        {/* ================= LEFT ARROW ================= */}
         <button
           className="
             hero-prev
@@ -271,10 +299,20 @@ export default function Hero() {
             items-center
             justify-center
             rounded-full
-            bg-(rgba(0, 0, 0, 0.50))
+            bg-black/50
             text-white
             transition
             hover:bg-black/35
+
+            /* TABLET */
+            max-lg:left-[3%]
+            max-lg:h-[60px]
+            max-lg:w-[60px]
+
+            /* MOBILE */
+            max-sm:left-[3%]
+            max-sm:h-[42px]
+            max-sm:w-[42px]
           "
         >
           <svg
@@ -283,24 +321,26 @@ export default function Hero() {
             height="75"
             viewBox="0 0 75 75"
             fill="none"
+            className="max-sm:h-[42px] max-sm:w-[42px] max-lg:h-[60px] max-lg:w-[60px]"
           >
             <circle
               cx="37.5"
               cy="37.5"
               r="37.5"
               fill="black"
-              fill-opacity="0.5"
+              fillOpacity="0.5"
             />
             <path
               d="M45 22L30.7071 36.2929C30.3166 36.6834 30.3166 37.3166 30.7071 37.7071L45 52"
               stroke="white"
-              stroke-width="3"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
+              strokeWidth="3"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
             />
           </svg>
         </button>
 
+        {/* ================= RIGHT ARROW ================= */}
         <button
           className="
             hero-next
@@ -315,10 +355,20 @@ export default function Hero() {
             items-center
             justify-center
             rounded-full
-            bg-(rgba(0, 0, 0, 0.50))
+            bg-black/50
             text-white
             transition
             hover:bg-black/35
+
+            /* TABLET */
+            max-lg:right-[3%]
+            max-lg:h-[60px]
+            max-lg:w-[60px]
+
+            /* MOBILE */
+            max-sm:right-[3%]
+            max-sm:h-[42px]
+            max-sm:w-[42px]
           "
         >
           <svg
@@ -327,42 +377,46 @@ export default function Hero() {
             height="75"
             viewBox="0 0 75 75"
             fill="none"
+            className="max-sm:h-[42px] max-sm:w-[42px] max-lg:h-[60px] max-lg:w-[60px]"
           >
             <circle
               cx="37.5"
               cy="37.5"
               r="37.5"
               fill="black"
-              fill-opacity="0.5"
+              fillOpacity="0.5"
             />
             <path
               d="M30 52L44.2929 37.7071C44.6834 37.3166 44.6834 36.6834 44.2929 36.2929L30 22"
               stroke="white"
-              stroke-width="3"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
+              strokeWidth="3"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
             />
           </svg>
         </button>
 
-        {/* PAGINATION */}
+        {/* ================= PAGINATION ================= */}
         <div
           className="
-    hero-pagination
-    absolute
-    bottom-[12px]
-  
-    z-30
-    flex
-    w-auto
-  
+            hero-pagination
+            absolute
+            bottom-[12px]
+            left-1/2
+            z-30
+            flex
+            w-auto
+            -translate-x-1/2
+            items-center
+            justify-center
+            gap-[12px]
 
-    items-center
-    justify-center
-    gap-[12px]
-  "
+            max-sm:bottom-[10px]
+            max-sm:gap-[8px]
+          "
         />
       </Swiper>
     </section>
   );
 }
+
