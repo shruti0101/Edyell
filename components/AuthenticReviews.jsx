@@ -10,6 +10,7 @@ const videos = [
   "/testimonial5.mp4",
   "/testimonial6.mp4",
   "/testimonial7.mp4",
+   "/testimonial8.mp4",
 ];
 
 export default function AuthenticReviews() {

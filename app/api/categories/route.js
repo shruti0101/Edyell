@@ -1,7 +1,7 @@
 import { connectDB } from "@/lib/db";
 import Category from "@/models/category";
 
-// ✅ CREATE
+//  CREATE
 export async function POST(req) {
   await connectDB();
   const data = await req.json();
@@ -10,14 +10,14 @@ export async function POST(req) {
   return Response.json(category);
 }
 
-// ✅ READ
+//  READ
 export async function GET() {
   await connectDB();
   const categories = await Category.find();
   return Response.json(categories);
 }
 
-// ✅ DELETE
+//  DELETE
 export async function DELETE(req) {
   await connectDB();
 
@@ -30,7 +30,7 @@ export async function DELETE(req) {
 }
 
 
-// ✅ UPDATE
+//  UPDATE
 export async function PUT(req) {
   await connectDB();
 

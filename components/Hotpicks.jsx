@@ -7,8 +7,8 @@ const hotPicks = [
 
 
  {
-    title: "Warning light",
-    subtitle: "Smart Brake Flash",
+    title: "Music, Calls",
+    subtitle: "Communication System",
     image: "/hotpicks3.png",
   },
 
@@ -17,13 +17,13 @@ const hotPicks = [
 
 
   {
-    title: "Music, Calls",
+    title: "Cycling",
     subtitle: "Communication System",
     image: "/hotpicks1.png",
   },
   {
-    title: "Cycling",
-    subtitle: "Communication System",
+    title: "Warning light",
+    subtitle: "Smart Brake Flash",
     image: "/hotpicks2.png",
   },
  

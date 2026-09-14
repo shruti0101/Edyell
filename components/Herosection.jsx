@@ -122,21 +122,22 @@ export default function Hero() {
                 backgroundImage: `url(${slide.image})`,
               }}
             >
-              {/* DARK OVERLAY */}
-              <div
-                className="
-                  absolute
-                  inset-0
-                  bg-gradient-to-r
-                  from-black/35
-                  via-black/25
-                  to-transparent
-
-                  max-sm:from-black/45
-                  max-sm:via-black/25
-                  max-sm:to-transparent
-                "
-              />
+           {/* DARK OVERLAY - HIDE ON 4TH SLIDE */}
+{index !== 3 && (
+  <div
+    className="
+      absolute
+      inset-0
+      bg-gradient-to-r
+      from-black/35
+      via-black/25
+      to-transparent
+      max-sm:from-black/45
+      max-sm:via-black/25
+      max-sm:to-transparent
+    "
+  />
+)}
 
               {/*  CONTENT  */}
               <div

@@ -13,7 +13,7 @@ export default function Home() {
   return (
    <>
    
-   <Navbar></Navbar>
+
    
    
    <Hero></Hero>
@@ -27,7 +27,7 @@ export default function Home() {
 <AuthenticReviews></AuthenticReviews>
 <ReviewsSlider></ReviewsSlider>
    <Products></Products>
-   <Footer></Footer>
+
    </>
   );
 }

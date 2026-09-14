@@ -2,6 +2,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/layout/Navbar";
+import Layoutwrapper from "@/components/layout/Layoutwrapper";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -17,7 +18,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${roboto.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        
+        <Layoutwrapper>
+
+  {children}
+
+        </Layoutwrapper>
+      
+        
+        
+        
+        </body>
     </html>
   );
 }
