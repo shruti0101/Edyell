@@ -7,6 +7,10 @@ const CategorySchema = new mongoose.Schema({
   metaTitle: String,
 
   metaDescription: String,
+  order: {
+  type: Number,
+  default: 0,
+},
 });
 
 export default mongoose.models.category ||

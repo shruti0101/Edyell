@@ -76,7 +76,7 @@ export default function Navbar() {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="229.2049"
-                height="32.7394"
+                height="32.64"
                 viewBox="0 0 230 33"
                 fill="none"
               >
