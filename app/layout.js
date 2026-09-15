@@ -1,4 +1,4 @@
-import { Roboto } from "next/font/google";
+import { Roboto ,Science_Gothic} from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/layout/Navbar";
@@ -9,6 +9,9 @@ const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
 });
+
+
+
 
 export const metadata = {
   title: "Create Next App",

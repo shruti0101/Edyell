@@ -24,7 +24,7 @@ export async function DELETE(req) {
   const { searchParams } = new URL(req.url);
   const id = searchParams.get("id");
 
-  await Category.findByIdAndDelete(id); // ✅ FIXED
+  await Category.findByIdAndDelete(id); 
 
   return Response.json({ success: true });
 }

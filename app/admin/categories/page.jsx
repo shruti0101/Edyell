@@ -358,6 +358,7 @@ export default function Categories() {
 
                     {/* ACTIONS */}
                     <div className="flex gap-2 mt-5">
+                      
                       <button
                         onClick={() => handleEdit(c)}
                         className="flex-1 py-2.5 rounded-xl bg-gray-100 hover:bg-gray-200 text-sm font-medium transition"

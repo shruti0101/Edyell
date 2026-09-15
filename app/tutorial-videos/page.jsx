@@ -4,12 +4,16 @@ import { useState } from "react";
 import Image from "next/image";
 import { Search, Play } from "lucide-react";
 
+
+
 const categories = [
   "All",
   "Helmet Headsets",
   "Intercom Headsets",
   "Bluetooth Earphones",
 ];
+
+
 
 const products = [
   {
@@ -37,6 +41,8 @@ const products = [
     video: "/videos/c2.mp4",
   },
 ];
+
+
 
 export default function ProductVideos() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -79,10 +85,11 @@ export default function ProductVideos() {
         Tutorial Video
         </h2>
       </section>
-    
+ 
     
     
     <main className="min-h-screen w-full bg-white text-black">
+
       <section className="mx-auto w-full max-w-[1100px] px-4 pb-[80px] pt-[35px]">
 
         {/* TOP BAR */}
@@ -197,6 +204,7 @@ export default function ProductVideos() {
           </div>
         )}
       </section>
+
     </main>
     </>
   );

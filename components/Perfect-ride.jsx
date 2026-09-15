@@ -2,6 +2,13 @@
 
 import React from "react";
 
+import { Science_Gothic } from "next/font/google";
+
+const scienceGothic = Science_Gothic({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
 const categories = [
   {
     image: "/perfect-ride/1.png",
@@ -140,53 +147,116 @@ export default function PerfectRide() {
 
 
 
-    <section className="w-full bg-white py-[80px]">
+<section className="w-full bg-white py-[80px]">
+  <div
+    className="
+      mx-auto
+      grid
+      w-full
+      max-w-[1440px]
+      grid-cols-2
+      gap-[30px]
+    "
+  >
+    {riderTypes.map((rider, index) => (
       <div
+        key={index}
         className="
-          mx-auto
-          grid
+          group
+          relative
+          h-[487px]
           w-full
-          max-w-[1440px]
-          grid-cols-2
-          gap-[30px]
+          overflow-hidden
         "
       >
-        {riderTypes.map((rider, index) => (
-          <div
-            key={index}
+        {/* BACKGROUND IMAGE */}
+        <img
+          src={rider.image}
+          alt={rider.title}
+          className="
+            absolute
+            inset-0
+            h-full
+            w-full
+            object-cover
+            transition-transform
+            duration-500
+            group-hover:scale-[1.02]
+          "
+        />
+
+        {/* DARK GRADIENT OVERLAY */}
+        <div
+          className="
+            absolute
+            inset-0
+            bg-gradient-to-t
+            from-black/80
+            via-black/20
+            to-transparent
+          "
+        />
+
+        {/* CONTENT */}
+        <div
+          className="
+            absolute
+            bottom-[35px]
+            left-0
+            flex
+            w-full
+            flex-col
+            items-center
+            justify-center
+          "
+        >
+          {/* TITLE */}
+     <h2
+  className={`
+    ${scienceGothic.className}
+    m-0
+    text-center
+    font-semibold
+    uppercase
+    leading-normal
+    text-white
+    text-[42px]
+    
+    drop-shadow-md
+  `}
+>
+            {rider.title}
+          </h2>
+
+          {/* BUTTON */}
+          <button
+            type="button"
             className="
-              group
-              relative
-              h-[487px]
-              w-full
-              overflow-hidden
+              mt-[18px]
+              flex
+              h-[30px]
+              min-w-[107px]
+              items-center
+              justify-center
+              bg-[#DA291C]
+              px-[18px]
+              text-[12px]
+              font-medium
+              text-white
+              transition-all
+              duration-300
+              hover:bg-[#b92117]
+              hover:scale-105
             "
           >
-            {/* BACKGROUND IMAGE */}
-
-            <img
-              src={rider.image}
-              alt={rider.title}
-              className="
-                absolute
-                inset-0
-                h-full
-                w-full
-                object-cover
-                transition-transform
-                duration-500
-                group-hover:scale-[1.02]
-              "
-            />
-
-          
-
-        
-
-          </div>
-        ))}
+            Buy Now
+            <span className="ml-[6px]">»</span>
+          </button>
+        </div>
       </div>
-    </section>
+    ))}
+  </div>
+</section>
 
 
 </>

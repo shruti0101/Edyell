@@ -282,116 +282,155 @@ export default function Hero() {
         ))}
 
         {/*  LEFT ARROW  */}
-        <button
-          className="
-            hero-prev
-            absolute
-            left-[5.2%]
-            top-1/2
-            z-20
-            flex
-            h-[75px]
-            w-[75px]
-            -translate-y-1/2
-            items-center
-            justify-center
-            rounded-full
-            bg-black/40
-            text-white
-            transition
-            hover:bg-black/35
+      {/* LEFT ARROW */}
+<button
+  className="
+    hero-prev
+    group
+    absolute
+    left-[5.2%]
+    top-1/2
+    z-20
+    flex
+    h-[75px]
+    w-[75px]
+    -translate-y-1/2
+    cursor-pointer
+    items-center
+    justify-center
+    rounded-full
+    bg-black/40
+    text-white
+    transition-all
+    duration-300
+    ease-out
 
-            /* TABLET */
-            max-lg:left-[3%]
-            max-lg:h-[60px]
-            max-lg:w-[60px]
+    hover:scale-110
+    hover:bg-black/60
+    hover:shadow-lg
 
-            /* MOBILE */
-            max-sm:left-[3%]
-            max-sm:h-[42px]
-            max-sm:w-[42px]
-          "
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="75"
-            height="75"
-            viewBox="0 0 75 75"
-            fill="none"
-            className="max-sm:h-[42px] max-sm:w-[42px] max-lg:h-[60px] max-lg:w-[60px]"
-          >
-            <circle
-              cx="37.5"
-              cy="37.5"
-              r="37.5"
-              fill="black"
-              fillOpacity="0.5"
-            />
-            <path
-              d="M45 22L30.7071 36.2929C30.3166 36.6834 30.3166 37.3166 30.7071 37.7071L45 52"
-              stroke="white"
-              strokeWidth="3"
-              strokeMiterlimit="10"
-              strokeLinecap="round"
-            />
-          </svg>
-        </button>
+    active:scale-95
 
+    max-lg:left-[3%]
+    max-lg:h-[60px]
+    max-lg:w-[60px]
+
+    max-sm:left-[3%]
+    max-sm:h-[42px]
+    max-sm:w-[42px]
+  "
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="75"
+    height="75"
+    viewBox="0 0 75 75"
+    fill="none"
+    className="
+      max-sm:h-[42px]
+      max-sm:w-[42px]
+      max-lg:h-[60px]
+      max-lg:w-[60px]
+    "
+  >
+    <circle
+      cx="37.5"
+      cy="37.5"
+      r="37.5"
+      fill="black"
+      fillOpacity="0.5"
+      className="transition-all duration-300 group-hover:fillOpacity-70"
+    />
+
+    <path
+      d="M45 22L30.7071 36.2929C30.3166 36.6834 30.3166 37.3166 30.7071 37.7071L45 52"
+      stroke="white"
+      strokeWidth="3"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      className="
+        transition-all
+        duration-300
+        group-hover:-translate-x-1
+      "
+    />
+  </svg>
+</button>
         {/*  RIGHT ARROW  */}
-        <button
-          className="
-            hero-next
-            absolute
-            right-[5.2%]
-            top-1/2
-            z-20
-            flex
-            h-[75px]
-            w-[75px]
-            -translate-y-1/2
-            items-center
-            justify-center
-            rounded-full
-            bg-black/40
-            text-white
-            transition
-            hover:bg-black/35
+      {/* RIGHT ARROW */}
+<button
+  className="
+    hero-next
+    group
+    absolute
+    right-[5.2%]
+    top-1/2
+    z-20
+    flex
+    h-[75px]
+    w-[75px]
+    -translate-y-1/2
+    cursor-pointer
+    items-center
+    justify-center
+    rounded-full
+    bg-black/40
+    text-white
+    transition-all
+    duration-300
+    ease-out
 
-            /* TABLET */
-            max-lg:right-[3%]
-            max-lg:h-[60px]
-            max-lg:w-[60px]
+    hover:scale-110
+    hover:bg-black/60
+    hover:shadow-lg
 
-            /* MOBILE */
-            max-sm:right-[3%]
-            max-sm:h-[42px]
-            max-sm:w-[42px]
-          "
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="75"
-            height="75"
-            viewBox="0 0 75 75"
-            fill="none"
-            className="max-sm:h-[42px] max-sm:w-[42px] max-lg:h-[60px] max-lg:w-[60px]"
-          >
-            <circle
-              cx="37.5"
-              cy="37.5"
-              r="37.5"
-              fill="black"
-              fillOpacity="0.5"
-            />
-            <path
-              d="M30 52L44.2929 37.7071C44.6834 37.3166 44.6834 36.6834 44.2929 36.2929L30 22"
-              stroke="white"
-              strokeWidth="3"
-              strokeMiterlimit="10"
-              strokeLinecap="round"
-            />
-          </svg>
-        </button>
+    active:scale-95
+
+    max-lg:right-[3%]
+    max-lg:h-[60px]
+    max-lg:w-[60px]
+
+    max-sm:right-[3%]
+    max-sm:h-[42px]
+    max-sm:w-[42px]
+  "
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="75"
+    height="75"
+    viewBox="0 0 75 75"
+    fill="none"
+    className="
+      max-sm:h-[42px]
+      max-sm:w-[42px]
+      max-lg:h-[60px]
+      max-lg:w-[60px]
+    "
+  >
+    <circle
+      cx="37.5"
+      cy="37.5"
+      r="37.5"
+      fill="black"
+      fillOpacity="0.5"
+      className="transition-all duration-300"
+    />
+
+    <path
+      d="M30 52L44.2929 37.7071C44.6834 37.3166 44.6834 36.6834 44.2929 36.2929L30 22"
+      stroke="white"
+      strokeWidth="3"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      className="
+        transition-all
+        duration-300
+        group-hover:translate-x-1
+      "
+    />
+  </svg>
+</button>
 
         {/*  PAGINATION  */}
         <div

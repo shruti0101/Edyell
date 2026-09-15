@@ -93,7 +93,8 @@ export default function PerfectSound() {
 </button>
 
             {/* NEXT */}
-          <button
+   {/* NEXT */}
+<button
   type="button"
   onClick={handleNext}
   aria-label="Next"
@@ -104,11 +105,11 @@ export default function PerfectSound() {
     w-[30px]
     items-center
     justify-center
-    bg-[#DA291C]
+    bg-[#F2F2F2]
     p-0
     transition
     duration-200
-    hover:bg-[#b92117]
+    hover:bg-[#DA291C]
   "
 >
   <svg
@@ -119,8 +120,8 @@ export default function PerfectSound() {
   >
     <path
       d="M1 1L4 4L1 7"
-      stroke="white"
-      className="transition duration-200"
+      stroke="black"
+      className="transition duration-200 group-hover:stroke-white"
       strokeWidth="1"
       strokeLinecap="round"
       strokeLinejoin="round"
